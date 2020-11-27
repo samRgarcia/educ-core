@@ -13,10 +13,18 @@ public class Nivel {
     @Column(name = "nombre_nivel")
     private String nombreNivel;
     private String descripcion;
-    private String complegidad;
+    private String complejidad;
 
     @OneToMany(mappedBy = "nivel")
     private List<Materia> materias;
+
+    /*public List<Materia> getMaterias() {
+        return materias;
+    }*/
+
+    public void setMaterias(List<Materia> materias) {
+        this.materias = materias;
+    }
 
     public Integer getIdNivele() {
         return idNivele;
@@ -42,11 +50,11 @@ public class Nivel {
         this.descripcion = descripcion;
     }
 
-    public String getComplegidad() {
-        return complegidad;
+    public String getComplejidad() {
+        return complejidad;
     }
 
-    public void setComplegidad(String complegidad) {
-        this.complegidad = complegidad;
+    public void setComplejidad(String complejidad) {
+        this.complejidad = complejidad;
     }
 }

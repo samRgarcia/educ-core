@@ -11,12 +11,20 @@ public class Materia {
     private Integer idMateria;
     @Column(name = "nombre_materia")
     private String nombreMateria;
-    @Column(name = "niveles_id_nivele")
+    @Column(name = "niveles_id_nivel")
     private Integer nivelesIdNivele;
 
     @ManyToOne
-    @JoinColumn(name = "id_nivel", insertable = false,updatable = false)
+    @JoinColumn(name = "niveles_id_nivel", insertable = false,updatable = false)
     private Nivel nivel;
+
+    public Nivel getNivel() {
+        return nivel;
+    }
+
+    public void setNivel(Nivel nivel) {
+        this.nivel = nivel;
+    }
 
     public Integer getIdMateria() {
         return idMateria;
